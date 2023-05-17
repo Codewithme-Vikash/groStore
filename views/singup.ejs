@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+
+    <section class="singup">
+        <div class="container">
+            <h1>Create you account</h1>
+
+            <form method="post" action="/singup">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username"  aria-describedby="usernameHelp" required>
+                  </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </section>
+
+    
+<%- include("partials/footer.ejs") %>
