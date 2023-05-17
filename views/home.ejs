@@ -1,0 +1,62 @@
+<%- include("partials/header.ejs") %>
+
+
+    <section class="home">
+        <div class="container">
+            <h1>Welcome to GroStore</h1>
+            <h3>Take your favourites Item :-</h3>
+
+            <div class="row">
+
+                <% items.forEach( ( item )=>{  %>
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-capitalize"><%= item.product %></h5>
+                                        <p class="card-text"><%= item.description %></p>
+                                        <p class="card-text"><small class="text-body-secondary"><%= item.id %></small></p>
+                                        <p class="card-text price">Price :
+                                            <span class="fake-price"><span><%= item.fakeprice %></span>$</span>
+                                            <span class="real-price"><span><%= item.realprice %></span>$</span>
+                                        </p>
+                                        
+    
+                                        <% if(loggedIn){ %>
+                                            <form action="/mycart/add/<%= item.id %>" method="post">                                        
+                                                <div class="row g-3 align-items-center mb-2">
+                                                    <div class="col-auto">
+                                                        <label for="quantity" class="form-label">Quantity</label>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <input type="number" name="quantity" id="quantity" class="form-control border-primary border-2" value="1" aria-labelledby="quantityHelpInline">
+                                                    </div>
+                                                    <!-- <div class="col-auto">
+                                                        <span id="quantityHelpInline" class="form-text">
+                                                            Must be 8-20 characters long.
+                                                        </span>
+                                                    </div> -->
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Add to cart</button>
+                                            </form>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+                
+
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+    <%- include("partials/footer.ejs") %>

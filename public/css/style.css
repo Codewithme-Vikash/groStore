@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 36px;
+    padding: 10px 0 20px 0;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 0 10px black;
+    text-transform: capitalize;
+}
+
+h3{
+    font-size: 25px;
+}
+
+.login form,
+.singup form,
+.admin form
+{
+    box-shadow: 0 0 10px 0 black;
+    padding: 30px;
+}
+
+.login form:hover,
+.singup form:hover,
+.admin form:hover{
+    box-shadow: 0 0 5px 0 black;
+}
+
+.price{
+    font-weight: bold;
+}
+.fake-price{
+    text-decoration: line-through;
+    font-size: 18px;
+}
+
+.real-price{
+    color: red;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.card-text {
+    margin: 5px 0 !important;
+}
